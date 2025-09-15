@@ -1,4 +1,4 @@
-# **001:** Different ways to run Kubernetes (Local, Edge, Cloud) — *Basic*
+# **001:** Different ways to run Kubernetes (Local, Edge, Cloud) & deploy your first App — *Basic*
 
 ## Overview
 

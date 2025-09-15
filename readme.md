@@ -36,11 +36,10 @@ All sessions run in an **internal Teams meeting**. Materials will be committed t
 
 ## Planned Sessions
 
-* **001:** Different ways to run Kubernetes (Local, Edge, Cloud) — *Basic*
+* **001:** Different ways to run Kubernetes (Local, Edge, Cloud) & deploy your first App — *Basic*
 * **002:** Create a Highly Available Kubernetes Cluster with Talos & Proxmox — *Intermediate*
-* **003:** Deploy your first Pod & Service (kubectl apply & expose) — *Basic*
-* **004:** Use `kubectl` like a pro (labels, selectors, jsonpath, etc.) — *Intermediate*
-* **005:** …more to come
+* **003:** Use `kubectl` like a pro (labels, selectors, jsonpath, etc.) — *Intermediate*
+* **004:** …more to come
 
 ## Topic Backlog
 
