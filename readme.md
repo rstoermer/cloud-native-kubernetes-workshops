@@ -36,19 +36,22 @@ All sessions run in an **internal Teams meeting**. Materials will be committed t
 
 ## Planned Sessions
 
-* **001:** Different ways to run Kubernetes (Local, Edge, Cloud) & deploy your first App — *Basic*
+* **001:** Run Kubernetes (Local, Edge, Cloud) and deploy your first App — *Basic*
 * **002:** Create a Highly Available Kubernetes Cluster with Talos & Proxmox — *Intermediate*
-* **003:** Use `kubectl` like a pro (labels, selectors, jsonpath, etc.) — *Intermediate*
-* **004:** …more to come
+* **003:** Overview of basic Kubernetes Resources (Pods, Deployments, Services, Namespaces) — *Basic*
+* **004:** Use `kubectl` like a pro (labels, selectors, jsonpath, etc.) — *Intermediate*
+* **005:** Helm Chart: Stop copy-pasting YAML and template for repeating deployments  — *Basic*
+* **006:** Kustomize: HELM, but different. What else is there? (CUE, Timoni, Nelm, ...)  — *Basic*
+* **00x:** …more to come
 
 ## Topic Backlog
 
 * Debug your app in Kubernetes (logs, exec, port-forward, describe, events) — *Intermediate*
 * Containers from scratch: Linux tools → an isolated process (aka “a container”) — *Advanced*
 * Kubernetes Secrets & ConfigMaps - managing app configuration — *Basic*
-* Helm Charts & Kustomize: Stop copy-pasting YAML and template for repeating deployments  — *Basic*
 * Health checks: Liveness & Readiness probes — *Basic*
 * Kubernetes State: Let's recover from a Disaster — *Intermediate*
+* Use Multus to attach multiple NICs to Pods — *Advanced*
 * CSI deep-dive: Persistent Volumes in Kubernetes — *Intermediate*
 * Kubernetes Operator: Let's write our own! — *Advanced*
 * Longhorn: Highly available StorageClass — *Advanced*
@@ -56,6 +59,7 @@ All sessions run in an **internal Teams meeting**. Materials will be committed t
 * Custom Resources (CRDs): Extending Kubernetes API — *Advanced*
 * Dev environments: Develop remotely incl. hot-reloading — *Intermediate*
 * GitOps with ArgoCD: deploy from Git — *Intermediate*
+* Start and manage a Virtual Machine in Kubernetes — *Advanced*
 * …and more
 
 ## Notes & Disclaimers
