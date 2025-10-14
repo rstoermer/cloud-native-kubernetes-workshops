@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: web-config
+  labels:
+    app: nginx
+data:
+  # Simple key-value pairs
+  server.name: "my-nginx-server"
+  max.connections: "100"
+  
+  # File-like data - Updated version
+  nginx.conf: |
+    server {
+        listen 80;
+        server_name localhost;
+        location / {
+            root /usr/share/nginx/html;
+            index index.html;
+        }
+        location /health {
+            return 200 'healthy\n';
+            add_header Content-Type text/plain;
+        }
+        location /info {
+            return 200 'Pod: $hostname\nServer: my-nginx-server\n';
+            add_header Content-Type text/plain;
+        }
+    }
+  
+  index.html: |
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Kubernetes Workshop - Updated</title>
+    </head>
+    <body>
+        <h1>Hello from Kubernetes - Version 2!</h1>
+        <p><strong>Server:</strong> my-nginx-server</p>
+        <p>This page is served from an updated ConfigMap</p>
+        <p>Updated at: 2025-10-14</p>
+        <p><em>Visit <a href="/info">/info</a> to see Pod details</em></p>
+    </body>
+    </html>

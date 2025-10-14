@@ -1,0 +1,66 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+  labels:
+    app: nginx
+    component: web
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.29.1-alpine
+    ports:
+    - containerPort: 80
+    
+    # Environment variables from ConfigMap
+    env:
+    - name: SERVER_NAME
+      valueFrom:
+        configMapKeyRef:
+          name: web-config
+          key: server.name
+    - name: MAX_CONNECTIONS
+      valueFrom:
+        configMapKeyRef:
+          name: web-config
+          key: max.connections
+    
+    # Environment variables from Secret
+    - name: DB_USERNAME
+      valueFrom:
+        secretKeyRef:
+          name: db-secret
+          key: db-username
+    - name: DB_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: db-secret
+          key: db-password
+    - name: DB_HOST
+      valueFrom:
+        secretKeyRef:
+          name: db-secret
+          key: db-host
+    
+    # Mount ConfigMap files as volumes
+    volumeMounts:
+    - name: config-volume
+      mountPath: /etc/nginx/conf.d
+      readOnly: true
+    - name: html-volume
+      mountPath: /usr/share/nginx/html
+      readOnly: true
+
+  volumes:
+  - name: config-volume
+    configMap:
+      name: web-config
+      items:
+      - key: nginx.conf
+        path: default.conf
+  - name: html-volume
+    configMap:
+      name: web-config
+      items:
+      - key: index.html
+        path: index.html
