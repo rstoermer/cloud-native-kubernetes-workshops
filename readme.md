@@ -39,8 +39,8 @@ All sessions run in an **internal Teams meeting**. Materials will be committed t
 * **001:** Run Kubernetes (Local, Edge, Cloud) and deploy your first App — *Basic*
 * **002:** Create a Highly Available Kubernetes Cluster with Talos & Proxmox — *Intermediate*
 * **003:** Overview of basic Kubernetes Resources (Pods, Deployments, Services, Namespaces) — *Basic*
-* **004:** Use `kubectl` like a pro (labels, selectors, jsonpath, etc.) — *Intermediate*
-* **005:** Helm Chart: Stop copy-pasting YAML and template for repeating deployments  — *Basic*
+* **004:** Helm Chart: Stop copy-pasting YAML and template for repeating deployments  — *Basic*
+* **005:** Use `kubectl` like a pro (labels, selectors, jsonpath, etc.) — *Intermediate*
 * **006:** Kustomize: HELM, but different. What else is there? (CUE, Timoni, Nelm, ...)  — *Basic*
 * **00x:** …more to come
 
