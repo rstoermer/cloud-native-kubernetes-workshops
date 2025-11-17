@@ -32,7 +32,7 @@ Let's say you want to deploy a web application with:
 - Database statefulset + service
 - ConfigMaps for configuration
 - Secrets for credentials
-- Ingress for routing
+- Gateway for routing
 
 Without Helm, you'd need to:
 
@@ -56,7 +56,7 @@ helm rollback myapp
 
 ## Alternatives to Helm
 
-Before we dive in, let's acknowledge that Helm isn't the only solution:
+Helm isn't the only solution, not even the best one, as it has some drawbacks. However, it's the most widely adopted. Let's look at some alternatives:
 
 ### Kustomize
 
@@ -101,8 +101,8 @@ Before we dive in, let's acknowledge that Helm isn't the only solution:
 
 1. **Massive Ecosystem**: Thousands of ready-made charts at [artifacthub.io](https://artifacthub.io/)
    - Need Prometheus monitoring? `helm install prometheus prometheus-community/prometheus`
-   - Need Nginx Ingress? `helm install nginx ingress-nginx/ingress-nginx`
-   - Need PostgreSQL, Redis, MySQL? Search Artifact Hub for official charts
+   - Need a Kafka Operator? `helm install my-strimzi-kafka-operator oci://quay.io/strimzi-helm/strimzi-kafka-operator --version 0.49.0-rc2`
+   - Need PostgreSQL, ValKey, MySQL? Search Artifact Hub for official charts
 
 2. **Industry Standard**: Most vendors provide official Helm charts
 3. **Built-in Versioning & Rollback**: Track deployment history automatically
@@ -133,7 +133,7 @@ Complex charts become hard to debug:
 
 ### 3. **Hidden Logic**
 
-Templates can hide what's actually being deployed, making troubleshooting harder. A GitOps approach with a visual diff, before deploying is helpful here.
+Templates can hide what's actually being deployed, making troubleshooting harder. A GitOps approach with a visual diff, before deploying is helpful here, see [ArgoCD](https://argo-cd.readthedocs.io/en/stable/user-guide/diff-strategies/).
 
 ### 4. **Learning Curve**
 
